@@ -16,6 +16,23 @@
 
 
 
+
+.rainbow-bg{
+  background-image: url('./assets//rainbow.png');
+  background-repeat: no-repeat;
+
+  /* background-position: center; */
+  /* background-size: 100% 100% */
+  
+}
+
+
+
+
+
+
+
+
 /* For screens 430px to 520px */
 @media (min-width: 430px) and (max-width: 520px) {
     .custom-position-430-520 {
@@ -32,7 +49,6 @@
     }
   }
   
-
 
 
 

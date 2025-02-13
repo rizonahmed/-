@@ -1,4 +1,5 @@
 import Card from '../Card'
+import Rainbow from '../Rainbow'
 import './App.css'
 import Chart from './Chart'
 import Footer from './Footer'
@@ -10,12 +11,14 @@ function App() {
     <>
       <div>
         <Hero></Hero>
-      <Card></Card>
-      <Chart></Chart>
+
+        <Rainbow></Rainbow>
+        <Card></Card>
+        <Chart></Chart>
 
         <Footer></Footer>
       </div>
-     
+
     </>
   )
 }

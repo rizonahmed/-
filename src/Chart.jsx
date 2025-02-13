@@ -16,7 +16,7 @@ const Chart = () => {
                         className='mx-auto'
                         src={chart} alt="" />
                         <img
-                        className='    absolute top-16 left-2/9  sm:top-1/3 sm:left-1/4 md:top-1/3 md:left-1/5 lg:top-3/9  lg:left-2/8  custom-position-430-520 custom-position-520-600'
+                        className='    absolute top-16 left-2/9  sm:top-1/3 sm:left-2/7 md:top-1/3 md:left-2/7 lg:top-3/8  lg:left-3/11  custom-position-430-520 custom-position-520-600'
                         src={img} alt="" />
 
                     </div>
