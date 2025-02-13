@@ -3,7 +3,7 @@ import Banner from "./Banner";
  
 const Hero = () => {
     return (
-        <div>
+        <div className="bg">
             <Banner></Banner>
          </div>
     );

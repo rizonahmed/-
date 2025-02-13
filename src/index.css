@@ -1,6 +1,36 @@
 @import "tailwindcss";
 
 
+.bg{
+    background-image: url('./assets/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .main-bg{
     background-image: url('./assets/xbg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    /* background-position: center; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+.foter{
+    background: url('./assets/star.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    background-size: cover;
 }
