@@ -16,12 +16,22 @@
 
 
 
-
-
-
-
-
-
+/* For screens 430px to 520px */
+@media (min-width: 430px) and (max-width: 520px) {
+    .custom-position-430-520 {
+      top: 110px;
+      left: 120px;
+    }
+  }
+  
+  /* For screens 520px to 600px */
+  @media (min-width: 520px) and (max-width: 640px) {
+    .custom-position-520-600 {
+      top: 150px;
+      left: 160px;
+    }
+  }
+  
 
 
 
