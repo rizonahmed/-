@@ -9,7 +9,7 @@
 .main-bg{
     background-image: url('./assets/xbg.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    /* background-size: cover; */
     object-fit: cover;
     /* background-position: center; */
 }
@@ -29,17 +29,25 @@
     background-repeat: no-repeat;
     background-size: cover;
     object-fit: cover;
-    /* background-position: center; */
+    background-position: center;
+    z-index: 100;
 }
-/* 
-.rect-bg{
-    background-image: url('./assets/rect.png');
-    background-repeat: no-repeat;
-     object-fit: cover;
-    background-position: center; 
-    background-size: 100% 100%; 
-} */
 
+
+.rect-bg {
+  background-image: url('./assets/rect.png');
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: 100% 100%;
+}
+
+/* Large Screen (1024px and above) */
+@media (min-width: 1024px) {
+  .rect-bg {
+      background-size: auto;
+      background-position: center;
+  }
+}
 
 
 
