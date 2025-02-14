@@ -15,16 +15,31 @@
 }
 
 
-
-
-.rainbow-bg{
-  background-image: url('./assets//rainbow.png');
+.nayok-bg{
+  background-image: url('./assets/actor-bg.png');
   background-repeat: no-repeat;
-
+  /* background-size: cover; */
+  object-fit: cover;
   /* background-position: center; */
-  /* background-size: 100% 100% */
-  
 }
+
+
+.money-bg{
+    background-image: url('./assets/moneybg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    /* background-position: center; */
+}
+/* 
+.rect-bg{
+    background-image: url('./assets/rect.png');
+    background-repeat: no-repeat;
+     object-fit: cover;
+    background-position: center; 
+    background-size: 100% 100%; 
+} */
+
 
 
 

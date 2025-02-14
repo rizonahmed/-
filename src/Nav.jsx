@@ -10,7 +10,7 @@ const Nav = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="   p-4 ">
+        <nav className=" sticky top-0 z-50  p-4 ">
             <div className="relative z-50 md:w-11/12 xl:w-8/12 mx-auto flex justify-between bg-[#FFF3DA] items-center    rounded-full px-2 py-1">
                 <div className="flex gap-2 items-center">
                     <img className="" src={logo} alt="" />
