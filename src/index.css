@@ -1,6 +1,25 @@
 @import "tailwindcss";
 
 
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+
+
+
+
+
 .bg{
     background-image: url('./assets/bg.png');
     background-repeat: no-repeat;
@@ -15,12 +34,39 @@
 }
 
 
-.nayok-bg{
+/* Apply nayoks-bg by default for screens smaller than lg */
+.nayoks-bg {
   background-image: url('./assets/actor-bg.png');
   background-repeat: no-repeat;
-  /* background-size: cover; */
+  background-size: cover;
   object-fit: cover;
-  /* background-position: center; */
+}
+
+/* Override to use nayok-bg only on lg and larger */
+@media (min-width: 1024px) {
+  .nayoks-bg {
+    background-image: none;
+  }
+
+  .nayok-bg {
+    background-image: url('./assets/actor-bg.png');
+    background-repeat: no-repeat;
+    object-fit: cover;
+  }
+}
+
+
+@media (min-width: 810px) and (max-width: 900px) {
+  .coin-position {
+    bottom:29% ;
+    right: 0;
+  }
+}
+@media (min-width: 901px) and (max-width: 1024px) {
+  .custom-position {
+    bottom:34% ;
+    right: 0;
+  }
 }
 
 
@@ -59,20 +105,82 @@
 /* For screens 430px to 520px */
 @media (min-width: 430px) and (max-width: 520px) {
     .custom-position-430-520 {
-      top: 110px;
-      left: 120px;
+      top: 80px;
+      left: 140px;
     }
   }
   
   /* For screens 520px to 600px */
   @media (min-width: 520px) and (max-width: 640px) {
     .custom-position-520-600 {
-      top: 150px;
-      left: 160px;
+      top: 80px;
+      left: 180px;
     }
   }
   
 
+
+.bannerHead{
+  color: #FFB5C0;
+text-shadow: 4px 4px 5px #3C2125;
+-webkit-text-stroke-width: 4px;
+-webkit-text-stroke-color: #3C2125;
+font-family: Comfortaa;
+font-size: 92px;
+font-style: normal;
+font-weight: 700;
+}
+
+
+@media (max-width: 840px) {
+  .bannerHead {
+    color: #FFB5C0;
+    font-size: 40px;
+    text-shadow: 2px 2px 0px #3C2125;
+    -webkit-text-stroke-width: 2px;
+
+
+  }
+}
+
+
+.logos{
+  color: #FFB5C0;
+  text-shadow: 4px 2px 3px #140b0d;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #502e33;
+  font-size: 25.659px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-transform: uppercase;
+
+}
+
+
+  .footerHead {
+    color: #FFB5C0;
+    text-shadow: 6px 4px 6px #3C2125;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: #3C2125;
+    font-size: 85.659px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+  
+  /* Mobile device (≤640px) */
+  @media (max-width: 840px) {
+    .footerHead {
+      font-size: 38px;
+      -webkit-text-stroke-width: 3px;
+
+      text-shadow: 0px 0px 0px #f195a3;
+
+    }
+  }
+  
 
 
  
