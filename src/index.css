@@ -28,9 +28,9 @@
 .main-bg{
     background-image: url('./assets/xbg.png');
     background-repeat: no-repeat;
-    /* background-size: cover; */
+    background-size: cover;
     object-fit: cover;
-    /* background-position: center; */
+    background-position: center;
 }
 
 
@@ -52,8 +52,20 @@
     background-image: url('./assets/actor-bg.png');
     background-repeat: no-repeat;
     object-fit: cover;
+    /* background-position:  calc(0% + 150px) center; */
+    background-position:  calc(0% - 50px) center;
+    background-size: 100% 100%;
+
   }
+
+ 
 }
+ 
+
+
+
+
+
 
 
 @media (min-width: 810px) and (max-width: 900px) {
@@ -181,6 +193,19 @@ font-weight: 700;
     }
   }
   
+
+
+
+  @media (min-width: 480px) and (max-width: 640px) {
+    .element {
+        position: absolute;
+        top: 26%;
+        left: 32%;
+    }
+}
+
+
+
 
 
  

@@ -14,36 +14,43 @@ const Money = () => {
             once: true, // Animation plays only once
         });
     }, []);
-    
-          const { language, setLanguage, translations } = useLanguage();
+
+    const { language, setLanguage, translations } = useLanguage();
 
 
     return (
-        <div id='about'  className='bg-[#FEFCE2] relative border-b-[4px] border-[#442612]'>
-            <div className='py-20 money-bg relative px-5 lg:px-0'>
+        <div id='about' className='bg-[#FEFCE2] relative money-bg border-b-[4px] border-[#442612]'>
+            <div className='w-full max-w-[1800px] mx-auto py-20  relative px-5 lg:px-0'>
+             
+               <div className='mb-24 flex justify-center sm:hidden'>
+               <button className="relative z-50 bg-[#FBAC01] border border-b-4 border-r-4 text-black px-6 py-3 rounded-full xl:text-2xl font-semibold hover:bg-yellow-500 transition">
+                    {translations[language].bannerbtn}
+                </button>
+
+               </div>
                 <div className='rect-bg py-20 px-4 md:px-8 lg:px-12 text-center'>
 
                     {/* Animated Heading */}
-                    <h1 
+                    <h1
                         data-aos="fade-up"
                         className="text-[36px] md:text-[56px] lg:text-[72px] font-bold"
                     >
-                     {translations[language].moneyh}
+                        {translations[language].moneyh}
 
-                      
+
                     </h1>
 
                     {/* Animated Paragraph */}
-                    <p 
+                    <p
                         data-aos="fade-up"
                         data-aos-delay="200"
                         className="text-[18px] md:text-[24px] lg:text-[28px] text-center w-full md:w-3/4 lg:w-1/2 mx-auto"
                     >
-                                      {translations[language].moneyp}
+                        {translations[language].moneyp}
                     </p>
-                    
+
                     {/* Animated Coins */}
-                    <div 
+                    <div
                         data-aos="zoom-in"
                         data-aos-delay="400"
                         className='flex justify-center items-center flex-wrap gap-4'
@@ -57,17 +64,17 @@ const Money = () => {
                         <img className='w-28 md:w-48 lg:w-52' src={coin} alt="" />
                     </div>
                 </div>
-    
+
                 {/* Animated Side Images */}
-                <img 
+                <img
                     data-aos="fade-right"
-                    className='absolute h-36 top-8 left-1 lg:h-auto lg:top-16 lg:left-0 xl:left-20 2xl:left-36'
-                    src={money} alt="" 
+                    className='absolute h-36 top-2/10 sm:top-8 left-5 sm:left-1 lg:h-auto lg:top-16 lg:left-0 xl:left-20 2xl:left-36'
+                    src={money} alt=""
                 />
-                <img 
+                <img
                     data-aos="fade-left"
-                    className='absolute h-36 bottom-8 right-0 lg:h-auto lg:bottom-16 lg:right-0 xl:right-20 2xl:right-36'
-                    src={money2} alt="" 
+                    className='absolute h-36 bottom-6/10 sm:bottom-8 right-5 mb-5 sm:right-0 lg:h-auto lg:bottom-16 lg:right-0 xl:right-20 2xl:right-36'
+                    src={money2} alt=""
                 />
             </div>
         </div>

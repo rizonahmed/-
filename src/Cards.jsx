@@ -15,39 +15,41 @@ const Cards = () => {
     }, []);
 
 
-        const { language, setLanguage, translations } = useLanguage();
-    
+    const { language, setLanguage, translations } = useLanguage();
+
 
     return (
         <div className="bg-[#F9C4BD] relative overflow-hidden border-b-[4px] border-[#442612]">
-            <div className="foter py-24 relative">
+            <div className="foter pb-20 pt-10 sm:py-24 relative w-full max-w-[1800px] mx-auto">
+
                 <div className="max-w-5xl mx-auto text-center">
-                    <h1 className="text-3xl lg:text-[70px] text-[#41131A]">
-                    {translations[language].cardsHeader}
+                    <h1 className="text-3xl font-semibold lg:text-[70px] text-[#41131A]">
+                        {translations[language].cardsHeader}
 
                     </h1>
-                    <p className="text-lg md:text-[28px] text-[#222221] mt-4">
-                    {translations[language].cardsP}
+                    <p className="text-lg px-3 sm:px-0 md:text-[28px] text-[#222221] mt-4">
+                        {translations[language].cardsP}
 
                     </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 max-w-6xl mx-auto px-4">
                     {[
-                        { title: translations[language].cardoneh , description: translations[language].cardonep  },
-                        { title: translations[language].cardtwoh , description: translations[language].cardtwop  },
-                        { title: translations[language].cardthreeh , description: translations[language].cardthreep  },
-                        { title: translations[language].cardfourh , description: translations[language].cardfourp  },
-                        { title: translations[language].cardfiveh , description: translations[language].cardfivep  },
-                        { title: translations[language].cardsixh , description: translations[language].cardsixp  },
-                        { title: translations[language].cardsevenh , description: translations[language].cardsevenp  },
-                        { title: translations[language].cardeighth , description: translations[language].cardeightp  },
-                        { title: translations[language].cardnineh , description: translations[language].cardninep  },
-                     
+                        { title: translations[language].cardoneh, description: translations[language].cardonep },
+                        { title: translations[language].cardtwoh, description: translations[language].cardtwop },
+                        { title: translations[language].cardthreeh, description: translations[language].cardthreep },
+                        { title: translations[language].cardfourh, description: translations[language].cardfourp },
+                        { title: translations[language].cardfiveh, description: translations[language].cardfivep },
+                        { title: translations[language].cardsixh, description: translations[language].cardsixp },
+                        { title: translations[language].cardsevenh, description: translations[language].cardsevenp },
+                        { title: translations[language].cardeighth, description: translations[language].cardeightp },
+                        { title: translations[language].cardnineh, description: translations[language].cardninep },
+
                     ].map((card, index) => (
-                        <div 
-                            key={index} 
-                            className="flex flex-col justify-center items-center gap-4 p-6 border border-black bg-[#FFF9FA] rounded-[24px] shadow-[4px_4px_0px_0px_#000] text-center"
+                        <div
+                            key={index}
+                            className={`flex flex-col justify-center items-center gap-4 p-6 border border-black bg-[#FFF9FA] rounded-[24px] shadow-[4px_4px_0px_0px_#000] text-center 
+            ${index === 0 || index === 3 || index === 6 ? 'block' : 'hidden'} sm:block`}
                             data-aos="fade-up"
                             data-aos-delay={index * 100} // Delay animation for each card
                         >
@@ -57,16 +59,17 @@ const Cards = () => {
                     ))}
                 </div>
 
+
                 {/* The background images don't need scroll animations */}
-                <img 
-                    className='absolute top-0 left-2 w-[100px] md:w-[130px] md:left-0 lg:w-[150px] md:top-0 lg:top-36 xl:w-[200px] 2xl:top-16 2xl:left-24 2xl:w-auto'
-                    src={cloth} 
-                    alt="" 
+                <img
+                    className='absolute z-50 -bottom-8 left-0 w-[160px] md:w-[130px] md:left-0 lg:w-[150px] md:top-0 lg:top-36 xl:w-[200px] 2xl:top-16 2xl:left-24 2xl:w-auto'
+                    src={cloth}
+                    alt=""
                 />
-                <img 
-                    className='absolute bottom- right-0 w-[100px] md:w-[250px] md:bottom-14 lg:w-[200px] lg:top-36 lg:right-5 xl xl:w-[250px] 2xl:w-auto 2xl:right-26'
-                    src={coinshow} 
-                    alt="" 
+                <img
+                    className='absolute z-[100] top-14 -right-16 w-[180px] md:w-[250px] md:bottom-14 lg:w-[200px] lg:top-36 lg:right-5 xl xl:w-[250px] 2xl:w-auto 2xl:right-26'
+                    src={coinshow}
+                    alt=""
                 />
             </div>
         </div>

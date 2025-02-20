@@ -51,24 +51,27 @@ const Chart = () => {
         Math.abs(rgb1[2] - rgb2[2]) <= tolerance
     );
 
-    const handleMouseMove = (e) => {
+    const showTooltip = (x, y, text) => {
+        setTooltip({ show: true, text, x, y });
+        setTimeout(() => setTooltip({ show: false, text: '', x: 0, y: 0 }), 1500);
+    };
+
+    const handleInteraction = (e) => {
         const canvas = canvasRef.current;
         const ctx = canvas.getContext('2d');
         const rect = canvas.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+        const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+        const y = (e.touches ? e.touches[0].clientY : e.clientY) - rect.top;
 
         const pixelData = ctx.getImageData(x, y, 1, 1).data;
         const rgb = [pixelData[0], pixelData[1], pixelData[2]];
 
         for (const [hex, { percentage, additionalText }] of Object.entries(colorMap)) {
             if (colorTolerance(rgb, hexToRgb(hex))) {
-                setTooltip({ show: true, text: `${percentage} - ${additionalText}`, x: e.pageX, y: e.pageY });
+                showTooltip(e.pageX, e.pageY, `${percentage} - ${additionalText}`);
                 return;
             }
         }
-
-        setTooltip({ ...tooltip, show: false });
     };
 
     return (
@@ -81,8 +84,8 @@ const Chart = () => {
                 <div className='md:flex justify-center items-center lg:gap-16'>
                     <div className='relative px-10 md:px-2'>
                         <img ref={imageRef} src={chart} alt="Chart" className='hidden' />
-                        <canvas ref={canvasRef} onMouseMove={handleMouseMove} className='mx-auto h-80 sm:h-auto cursor-pointer' />
-                        <img className='absolute top-20 left-2/8 sm:top-1/3 sm:left-2/6 md:top-1/3 md:left-2/7 lg:top-3/8 lg:left-3/11' src={img} alt="Inner Image" />
+                        <canvas ref={canvasRef} onMouseMove={handleInteraction} onTouchStart={handleInteraction} className='mx-auto h-84 sm:h-auto cursor-pointer' />
+                        <img className='absolute top-22 left-2/8 sm:top-1/3 sm:left-2/6 md:top-1/3 md:left-2/7 lg:top-3/8 lg:left-3/11 element ' src={img} alt="Inner Image" />
                     </div>
 
                     <div>
@@ -99,10 +102,9 @@ const Chart = () => {
                     </div>
                 </div>
 
-                {/* Tooltip with Backdrop Blur, Border, and Color */}
                 {tooltip.show && (
                     <div
-                        className="absolute px-4 py-2 bg-black hidden sm:block text-white text-sm rounded-md shadow-lg backdrop-blur-sm border-2 border-white"
+                        className="absolute px-4 py-2 bg-black text-white text-sm rounded-md shadow-lg backdrop-blur-sm border-2 border-white"
                         style={{
                             top: tooltip.y + 10,
                             left: tooltip.x + 10,

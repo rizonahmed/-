@@ -10,15 +10,15 @@ const Footer = () => {
 
     return (
         <div className="bg w">
-            <div className="foter py-24">
+            <div className="foter pb-24 pt-14 sm:py-24">
                 <div className='w-11/12 lg:w-9/12 mx-auto'>
-                    <div className='flex justify-center items-center gap-3'>
-                        <img className='h-16 sm:h-full' src={logo} alt="Logo" />
+                    <div className='sm:flex justify-center items-center gap-3 '>
+                        <img className='h-16 sm:h-full mx-auto sm:mx-0' src={logo} alt="Logo" />
                         {/* <img className='h-8 lg:h-16' src={name} alt="Brand Name" /> */}
-                        <h1 className="footerHead"> {translations[language].footerHead} </h1>
+                        <h1 className="footerHead text-center sm:text-lef"> {translations[language].footerHead} </h1>
                     </div>
 
-                    <p className='text-center text-[26px] text-lg lg:w-1/2 mx-auto py-10 px-3'>
+                    <p className='text-center sm:text-[26px] text-xl font-semibold lg:w-1/2 mx-auto py-10 px-3'>
                         {translations[language].welcome}
                     </p>
 
